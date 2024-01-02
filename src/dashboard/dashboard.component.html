@@ -1,0 +1,12 @@
+<mat-grid-list cols="6" rowHeight="70px">
+  <mat-grid-tile [colspan]="6" rowspan="2"> Events </mat-grid-tile>
+  <mat-grid-tile [colspan]="6" rowspan="1">
+    <app-tags></app-tags>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="1" rowspan="7">
+    <app-filters></app-filters>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="5" rowspan="7">
+    <app-logger></app-logger>
+  </mat-grid-tile>
+</mat-grid-list>

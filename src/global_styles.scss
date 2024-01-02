@@ -1,0 +1,79 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$my-primary: mat.define-palette(mat.$indigo-palette, 500);
+$my-accent: mat.define-palette(mat.$blue-grey-palette, A200, A100, A400);
+
+$my-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $my-primary,
+      accent: $my-accent,
+    ),
+    typography:
+      mat.define-typography-config(
+        $font-family: 'monospace',
+      ),
+    density: 0,
+  )
+);
+
+@include mat.all-component-themes($my-theme);
+
+html {
+  --mat-toolbar-standard-height: 44px;
+  --mat-toolbar-mobile-height: 44px;
+  --mat-expansion-container-shape: 0px;
+  --mat-expansion-container-background-color: transparent;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
+}
+
+body {
+  max-height: 100vh;
+}
+
+.app-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-grid-tile-content {
+  align-items: start !important;
+  justify-content: flex-start !important;
+  border: 1px solid #5f5f5f;
+}
+
+.mat-expansion-panel:not([class*='mat-elevation-z']) {
+  box-shadow: none !important;
+}
+
+.mat-expansion-panel-content {
+  border-left: 1px dashed white;
+  margin-left: 28px;
+  height: 300px;
+  overflow: auto !important;
+}
+
+.mat-expansion-panel-content::-webkit-scrollbar {
+  width: 12px;
+}
+
+.mat-expansion-panel-content::-webkit-scrollbar-track {
+  background: #424242;
+}
+
+.mat-expansion-panel-content::-webkit-scrollbar-thumb {
+  background-color: #212121;
+  border-radius: 20px;
+  border: 3px solid #424242;
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+}
